@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Веб-студия — Контакты</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+<div class="page__wrapper">
+
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__title">Веб-студия «WebLab»</h1>
+
+            <nav class="navigation header__navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="index.html">Главная</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link" href="about.html">О нас</a>
+                    </li>
+                    <li class="navigation__item">
+                        <a class="navigation__link navigation__link--active" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page__content">
+        <main class="main">
+            <h2 class="main__title">Свяжитесь с нами</h2>
+
+            <form class="contact-form" action="#" method="post" >
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="name">Имя</label>
+                    <input class="contact-form__input" type="text" id="name" name="name" required>
+                </div>
+
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="email">E-mail</label>
+                    <input class="contact-form__input" type="email" id="email" name="email" required>
+                </div>
+
+                <div class="contact-form__item">
+                    <label class="contact-form__label" for="message">Сообщение</label>
+                    <textarea class="contact-form__textarea" id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button class="contact-form__button" type="submit">Отправить</button>
+            </form>
+        </main>
+
+        <aside class="sidebar sidebar--social">
+            <h3 class="sidebar__title">Мы в социальных сетях</h3>
+            <ul class="sidebar__list">
+                <li class="sidebar__item"><a class="sidebar__link" href="#">Telegram</a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#">Instagram</a></li>
+                <li class="sidebar__item"><a class="sidebar__link" href="#">GitHub</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <p class="footer__text">© 2025 Веб-студия «WebLab». Все права защищены.</p>
+    </footer>
+
+</div>
+</body>
+</html>
