@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <title>Лабораторна робота №4 – Головна</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="layout">
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="logo">Лабораторні роботи</a>
+
+            <nav class="nav">
+                <a href="index.html" class="nav__link nav__link--active">Головна</a>
+                <a href="about.html" class="nav__link">Про сайт</a>
+                <a href="contacts.html" class="nav__link">Контакти</a>
+                <a
+                        href="https://github.com/SvarogWeb/web"
+                        class="nav__link nav__link--cta"
+                        target="_blank"
+                        rel="noreferrer"
+                >GitHub</a
+                >
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <section class="sidebar__section">
+            <h2 class="sidebar__title">Лабораторні</h2>
+            <ul class="sidebar__list">
+                <li>
+                    <a href="#" class="sidebar__link">Лабораторна робота №1</a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar__link">Лабораторна робота №2</a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar__link">Лабораторна робота №3</a>
+                </li>
+                <li>
+                    <a href="index.html" class="sidebar__link sidebar__link--current"
+                    >Лабораторна робота №4</a
+                    >
+                </li>
+            </ul>
+        </section>
+
+        <section class="sidebar__section">
+            <h2 class="sidebar__title">Ресурси</h2>
+            <ul class="sidebar__list">
+                <li>
+                    <a href="https://developer.mozilla.org" class="sidebar__link"
+                    >MDN Web Docs</a
+                    >
+                </li>
+                <li>
+                    <a href="https://css-tricks.com" class="sidebar__link"
+                    >CSS-Tricks</a
+                    >
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <main class="main">
+        <section class="section news">
+            <h1 class="news__title">Останні новини</h1>
+
+            <div class="news__list">
+                <article class="news-card">
+                    <figure class="media">
+                        <div class="media__img"></div>
+                    </figure>
+
+                    <h3 class="news-card__title">
+                        Оновлення макету: Grid + Flexbox
+                    </h3>
+                    <p class="news-card__text">
+                        Головна сторінка побудована на CSS Grid, а контент карток
+                        новин – за допомогою Flexbox. Такий підхід спрощує адаптивну
+                        верстку та повторне використання блоків.
+                    </p>
+
+                    <div class="news-card__meta">
+                        <time datetime="2025-03-01">1 березня 2025</time>
+                        <a href="#" class="news-card__link">Читати далі</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <figure class="media">
+                        <div class="media__img"></div>
+                    </figure>
+
+                    <h3 class="news-card__title">Єдиний aside для всіх сторінок</h3>
+                    <p class="news-card__text">
+                        Бокове меню уніфіковане: тепер одна структура aside
+                        використовується на всіх сторінках, що полегшує підтримку
+                        проєкту.
+                    </p>
+
+                    <div class="news-card__meta">
+                        <time datetime="2025-03-02">2 березня 2025</time>
+                        <a href="#" class="news-card__link">Читати далі</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <figure class="media">
+                        <div class="media__img"></div>
+                    </figure>
+
+                    <h3 class="news-card__title">Контактна форма з валідацією</h3>
+                    <p class="news-card__text">
+                        Форма зворотного звʼязку використовує HTML5-валідацію та
+                        окремі стилі для різних станів полів, що покращує досвід
+                        користувача.
+                    </p>
+
+                    <div class="news-card__meta">
+                        <time datetime="2025-03-03">3 березня 2025</time>
+                        <a href="contacts.html" class="news-card__link">До форми</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div>
+                <h3 class="footer__title">Про сайт</h3>
+                <p class="footer__text">
+                    Навчальний проєкт для лабораторних робіт з верстки. Використовує
+                    сучасні підходи CSS Grid та Flexbox.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="footer__title">Навігація</h3>
+                <ul class="footer__list">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="about.html">Про сайт</a></li>
+                    <li><a href="contacts.html">Контакти</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="footer__title">Наші контакти</h3>
+                <ul class="footer__contacts">
+                    <li>Email: example@university.edu</li>
+                    <li>Телефон: +380 (00) 000-00-00</li>
+                    <li>Адреса: м. Київ, вул. Прикладна, 1</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer__copy">© 2025 Лабораторна робота №4</p>
+    </footer>
+</div>
+</body>
+</html>

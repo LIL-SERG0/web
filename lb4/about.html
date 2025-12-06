@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Лабораторна робота №4 – Про сайт</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="layout">
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">Лабораторні роботи</a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Головна</a>
+        <a href="about.html" class="nav__link nav__link--active"
+        >Про сайт</a
+        >
+        <a href="contacts.html" class="nav__link">Контакти</a>
+        <a
+                href="https://github.com/SvarogWeb/web"
+                class="nav__link nav__link--cta"
+                target="_blank"
+                rel="noreferrer"
+        >GitHub</a
+        >
+      </nav>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <section class="sidebar__section">
+      <h2 class="sidebar__title">Лабораторні</h2>
+      <ul class="sidebar__list">
+        <li>
+          <a href="#" class="sidebar__link">Лабораторна робота №1</a>
+        </li>
+        <li>
+          <a href="#" class="sidebar__link">Лабораторна робота №2</a>
+        </li>
+        <li>
+          <a href="#" class="sidebar__link">Лабораторна робота №3</a>
+        </li>
+        <li>
+          <a href="index.html" class="sidebar__link sidebar__link--current"
+          >Лабораторна робота №4</a
+          >
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="main">
+    <section class="section about">
+      <h1 class="about__title">Про цей навчальний сайт</h1>
+      <p class="about__text">
+        Сайт створено як основа для виконання лабораторних робіт з теми
+        “CSS layout: Flexbox та Grid”. На головній сторінці розташовані
+        новини у вигляді карток, а для всіх сторінок використовується
+        спільний каркас на Grid з єдиними header, aside та footer.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <h3 class="footer__title">Про сайт</h3>
+        <p class="footer__text">
+          Навчальний проєкт для лабораторних робіт з верстки.
+        </p>
+      </div>
+      <div>
+        <h3 class="footer__title">Навігація</h3>
+        <ul class="footer__list">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Про сайт</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Наші контакти</h3>
+        <ul class="footer__contacts">
+          <li>Email: example@university.edu</li>
+          <li>Телефон: +380 (00) 000-00-00</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__copy">© 2025 Лабораторна робота №4</p>
+  </footer>
+</div>
+</body>
+</html>

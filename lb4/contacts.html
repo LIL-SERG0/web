@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Лабораторна робота №4 – Контакти</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="layout">
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">Лабораторні роботи</a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Головна</a>
+        <a href="about.html" class="nav__link">Про сайт</a>
+        <a href="contacts.html" class="nav__link nav__link--active"
+        >Контакти</a
+        >
+        <a
+                href="https://github.com/SvarogWeb/web"
+                class="nav__link nav__link--cta"
+                target="_blank"
+                rel="noreferrer"
+        >GitHub</a
+        >
+      </nav>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <section class="sidebar__section">
+      <h2 class="sidebar__title">Лабораторні</h2>
+      <ul class="sidebar__list">
+        <li>
+          <a href="#" class="sidebar__link">Лабораторна робота №1</a>
+        </li>
+        <li>
+          <a href="#" class="sidebar__link">Лабораторна робота №2</a>
+        </li>
+        <li>
+          <a href="#" class="sidebar__link">Лабораторна робота №3</a>
+        </li>
+        <li>
+          <a href="index.html" class="sidebar__link sidebar__link--current"
+          >Лабораторна робота №4</a
+          >
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="main">
+    <section class="section contact">
+      <h1 class="contact__title">Форма зворотного звʼязку</h1>
+      <p class="contact__subtitle">
+        Заповніть форму нижче, щоб надіслати питання або відгук щодо
+        лабораторних робіт.
+      </p>
+
+      <form class="contact-form" action="#" method="post" novalidate>
+        <div class="contact-form__item">
+          <label class="contact-form__label" for="name">
+            Імʼя <span class="contact-form__required">*</span>
+          </label>
+          <input
+                  class="contact-form__input"
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Ваше імʼя"
+                  required
+          />
+        </div>
+
+        <div class="contact-form__item">
+          <label class="contact-form__label" for="email">
+            Email <span class="contact-form__required">*</span>
+          </label>
+          <input
+                  class="contact-form__input"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="example@university.edu"
+                  required
+          />
+        </div>
+
+        <div class="contact-form__item">
+          <label class="contact-form__label" for="topic">Тема</label>
+          <input
+                  class="contact-form__input"
+                  id="topic"
+                  name="topic"
+                  type="text"
+                  placeholder="Тема повідомлення"
+          />
+        </div>
+
+        <div class="contact-form__item">
+          <label class="contact-form__label" for="message">
+            Повідомлення <span class="contact-form__required">*</span>
+          </label>
+          <textarea
+                  class="contact-form__textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Ваше повідомлення"
+                  required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="contact-form__button">
+          Надіслати
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <h3 class="footer__title">Про сайт</h3>
+        <p class="footer__text">
+          Навчальний проєкт для лабораторних робіт з верстки.
+        </p>
+      </div>
+      <div>
+        <h3 class="footer__title">Навігація</h3>
+        <ul class="footer__list">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Про сайт</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Наші контакти</h3>
+        <ul class="footer__contacts">
+          <li>Email: example@university.edu</li>
+          <li>Телефон: +380 (00) 000-00-00</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__copy">© 2025 Лабораторна робота №4</p>
+  </footer>
+</div>
+</body>
+</html>

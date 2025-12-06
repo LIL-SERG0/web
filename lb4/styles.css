@@ -1,0 +1,429 @@
+:root {
+    /* Кольорова палітра */
+    --brand: #002b5c;
+    --brand-light: #004a9b;
+    --accent: #ffcc00;
+
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --text: #1f2933;
+    --muted: #6b7280;
+    --border: #d1d5db;
+
+    /* Відступи */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+
+    /* Радіуси/тіні */
+    --radius-1: 4px;
+    --radius-2: 8px;
+    --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.1);
+}
+
+/* Скидання базових стилів */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* Посилання */
+a {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Базовий GRID layout */
+.layout {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    gap: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    }
+}
+
+/* HEADER */
+
+.header {
+    grid-area: header;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-5);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--brand);
+}
+
+/* Навігація */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.nav__link {
+    font-size: 0.95rem;
+    color: var(--muted);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-1);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav__link:hover {
+    background-color: rgba(0, 43, 92, 0.06);
+    color: var(--brand);
+}
+
+.nav__link--active {
+    color: var(--brand);
+    font-weight: 600;
+}
+
+.nav__link--cta {
+    margin-left: auto;
+    border: 1px solid var(--brand);
+    color: var(--brand);
+}
+
+.nav__link--cta:hover {
+    background-color: var(--brand);
+    color: #fff;
+}
+
+/* SIDEBAR (aside) */
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.sidebar__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.sidebar__title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.sidebar__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.sidebar__link {
+    font-size: 0.95rem;
+    padding: var(--space-1) 0;
+    color: var(--brand);
+}
+
+.sidebar__link--current {
+    font-weight: 600;
+}
+
+/* MAIN */
+
+.main {
+    grid-area: main;
+    padding: var(--space-5);
+}
+
+/* Секції в main */
+
+.section {
+    background-color: var(--surface);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-soft);
+    padding: var(--space-5);
+}
+
+/* Новини */
+
+.news__title {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-4);
+}
+
+.news__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-4);
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    border-radius: var(--radius-2);
+    border: 1px solid var(--border);
+    padding: var(--space-4);
+    gap: var(--space-3);
+}
+
+/* media-блок картки */
+
+.media {
+    margin-bottom: var(--space-2);
+}
+
+.media__img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-2);
+    background: linear-gradient(135deg, var(--brand-light), var(--accent));
+}
+
+/* контент картки */
+
+.news-card__title {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-1);
+}
+
+.news-card__text {
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.news-card__meta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.news-card__link {
+    font-weight: 600;
+}
+
+/* ABOUT */
+
+.about__title {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-3);
+}
+
+.about__text {
+    color: var(--muted);
+}
+
+/* CONTACT FORM */
+
+.contact__title {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-3);
+}
+
+.contact__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-4);
+    color: var(--muted);
+}
+
+.contact-form {
+    max-width: 600px;
+    background-color: var(--surface);
+    padding: var(--space-5);
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.contact-form__item {
+    display: grid;
+    gap: var(--space-1);
+}
+
+.contact-form__label {
+    font-size: 0.9rem;
+}
+
+.contact-form__required {
+    color: #e11d48;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-1);
+    border: 1px solid var(--border);
+    font: inherit;
+    resize: vertical;
+    min-height: 42px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.contact-form__textarea {
+    min-height: 120px;
+}
+
+/* Стани форми */
+
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+    color: #9ca3af;
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    outline: none;
+    border-color: var(--brand-light);
+    box-shadow: 0 0 0 2px rgba(0, 43, 92, 0.2);
+}
+
+/* HTML5-валідація */
+
+.contact-form__input:invalid,
+.contact-form__textarea:invalid {
+    border-color: #dc2626;
+}
+
+.contact-form__input:valid,
+.contact-form__textarea:valid {
+    border-color: #16a34a;
+}
+
+/* Кнопка */
+
+.contact-form__button {
+    margin-top: var(--space-2);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 999px;
+    border: none;
+    background-color: var(--brand);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+    background-color 0.15s ease;
+}
+
+.contact-form__button:hover {
+    background-color: var(--brand-light);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-1px);
+}
+
+.contact-form__button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* FOOTER */
+
+.footer {
+    grid-area: footer;
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: var(--space-4) var(--space-5);
+}
+
+.footer__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-3);
+}
+
+.footer__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+}
+
+.footer__text {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.footer__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.footer__contacts {
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.footer__copy {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
