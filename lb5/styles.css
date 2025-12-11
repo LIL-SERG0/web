@@ -1,0 +1,426 @@
+/* -------------------- */
+/* БАЗОВІ НАЛАШТУВАННЯ  */
+/* -------------------- */
+
+:root {
+    /* кольори світлої теми */
+    --bg: #f3f4f6;
+    --surface: #ffffff;
+    --surface-muted: #e5e7eb;
+    --text: #111827;
+    --text-muted: #4b5563;
+    --border: #e5e7eb;
+
+    --brand: #4f46e5;
+    --brand-alt: #6366f1;
+    --brand-ghost: rgba(79, 70, 229, 0.08);
+
+    /* відступи */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+
+    /* fluid-типографіка */
+    --fs-body: clamp(1rem, 0.94rem + 0.3vw, 1.125rem);
+    --fs-title-sm: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+    --fs-title-lg: clamp(1.5rem, 1.2rem + 1.6vw, 2.25rem);
+
+    --radius-md: 0.75rem;
+    --radius-lg: 1.25rem;
+    --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.1);
+}
+
+/* темна тема – поважаємо налаштування системи */
+@media (prefers-color-scheme: dark) {
+:root {
+        --bg: #020617;
+        --surface: #030712;
+        --surface-muted: #020617;
+        --text: #e5e7eb;
+        --text-muted: #9ca3af;
+        --border: #1f2937;
+
+        --brand: #6366f1;
+        --brand-alt: #818cf8;
+        --brand-ghost: rgba(99, 102, 241, 0.15);
+    }
+}
+
+/* reset-lite */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* -------------------- */
+/* LAYOUT (mobile-first)*/
+/* -------------------- */
+
+.layout {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "sidenav"
+    "main"
+    "footer";
+    gap: var(--space-4);
+    padding: var(--space-4);
+}
+
+/* 640px+ : планшети / великі телефони (landscape) */
+@media (min-width: 640px) {
+.layout {
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "header header"
+        "sidenav main"
+        "footer footer";
+    }
+}
+
+/* 1024px+ : планшет landscape / десктоп */
+@media (min-width: 1024px) {
+.layout {
+        grid-template-columns: 280px 1fr;
+    }
+}
+
+/* -------------------- */
+/* HEADER               */
+/* -------------------- */
+
+.header {
+    grid-area: header;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: var(--space-3) var(--space-4);
+}
+
+.header__inner {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+}
+
+.logo__mark {
+    padding: var(--space-1) var(--space-2);
+    border-radius: 999px;
+    background-color: var(--brand-ghost);
+    color: var(--brand);
+    font-size: 0.9em;
+}
+
+.logo__text {
+    font-size: 1rem;
+}
+
+.top-nav {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.top-nav__link {
+    padding: var(--space-2) var(--space-3);
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.top-nav__link:hover {
+    background-color: var(--brand-ghost);
+    color: var(--brand);
+}
+
+/* -------------------- */
+/* SIDENAV              */
+/* -------------------- */
+
+.sidenav {
+    grid-area: sidenav;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: var(--space-4);
+}
+
+.sidenav__title {
+    margin: 0 0 var(--space-3);
+    font-size: var(--fs-title-sm);
+}
+
+.sidenav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-2);
+}
+
+.sidenav__link {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.sidenav__link:hover {
+    background-color: var(--surface-muted);
+    color: var(--text);
+}
+
+.sidenav__link--active {
+    background-color: var(--brand-ghost);
+    color: var(--brand);
+}
+
+/* -------------------- */
+/* MAIN                 */
+/* -------------------- */
+
+.main {
+    grid-area: main;
+}
+
+.section {
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: var(--space-5);
+    height: 100%;
+}
+
+.section__header {
+    margin-bottom: var(--space-5);
+}
+
+.page-title {
+    margin: 0 0 var(--space-2);
+    font-size: var(--fs-title-lg);
+    line-height: 1.2;
+}
+
+.section__lead {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* список карток – fluid-сітка */
+.news-list {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* -------------------- */
+/* CARD                 */
+/* -------------------- */
+
+.news-card {
+    background-color: var(--surface-muted);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card__media {
+    margin: 0;
+}
+
+/* media block */
+.media {
+    margin: 0;
+    aspect-ratio: 16 / 9;
+    overflow: clip;
+}
+
+.media__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* card body */
+.news-card__body {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.news-card__title {
+    margin: 0;
+    font-size: var(--fs-title-sm);
+}
+
+.news-card__excerpt {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.news-card__meta {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 999px;
+    background-color: color-mix(in srgb, var(--surface) 92%, #ffffff 8%);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.news-card__date::before {
+    content: "📅 ";
+}
+
+.news-card__tag::before {
+    content: "🏷 ";
+}
+
+/* button */
+.btn {
+    align-self: flex-start;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, var(--brand), var(--brand-alt));
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+        filter 0.1s ease;
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.35);
+}
+
+.btn:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
+}
+
+/* -------------------- */
+/* FOOTER               */
+/* -------------------- */
+
+.footer {
+    grid-area: footer;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: var(--space-4);
+}
+
+.footer__inner {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+
+/* 640px+: дві колонки, друга з мінімальною шириною */
+@media (min-width: 640px) {
+.footer__inner {
+        grid-template-columns: 1fr minmax(220px, 1fr);
+    }
+}
+
+/* 1024px+: контакти ширші */
+@media (min-width: 1024px) {
+.footer__inner {
+        grid-template-columns: 1fr minmax(280px, 1fr);
+    }
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    order: 2; /* на мобілах під контактами */
+}
+
+.footer__text p {
+    margin: 0 0 var(--space-1);
+}
+
+.footer__text p:last-child {
+    margin-bottom: 0;
+}
+
+.footer__contacts {
+    /* без background – щоб не було артефакта з попередньої ЛР */
+}
+
+.footer__title {
+    margin: 0 0 var(-
+    -space-2);
+    font-size: var(--fs-title-sm);
+}
+
+.footer__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.footer__list li + li {
+    margin-top: var(--space-1);
+}
+
+/* на екранах ширше 640px – текст знову перший */
+@media (min-width: 640px) {
+.footer__text {
+        order: 0;
+    }
+}
