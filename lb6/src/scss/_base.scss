@@ -1,0 +1,71 @@
+/* reset-lite */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* -------------------- */
+/* LAYOUT (mobile-first)*/
+/* -------------------- */
+
+.layout {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "sidenav"
+    "main"
+    "footer";
+    gap: var(--space-4);
+    padding: var(--space-4);
+}
+
+/* 640px+ : планшети / великі телефони (landscape) */
+@media (min-width: 640px) {
+.layout {
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "header header"
+        "sidenav main"
+        "footer footer";
+    }
+}
+
+/* 1024px+ : планшет landscape / десктоп */
+@media (min-width: 1024px) {
+.layout {
+        grid-template-columns: 280px 1fr;
+    }
+}
+
+/* -------------------- */

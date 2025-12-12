@@ -1,0 +1,60 @@
+// SCSS змінні (ЛР6)
+$brand: #4f46e5;
+$brand-alt: #6366f1;
+$bg: #f3f4f6;
+$surface: #ffffff;
+$text: #111827;
+$text-muted: #4b5563;
+$border: #e5e7eb;
+
+// Нижче — CSS custom properties з ЛР5 (залишено як основу)
+/* -------------------- */
+/* БАЗОВІ НАЛАШТУВАННЯ  */
+/* -------------------- */
+
+:root {
+    /* кольори світлої теми */
+    --bg: #f3f4f6;
+    --surface: #ffffff;
+    --surface-muted: #e5e7eb;
+    --text: #111827;
+    --text-muted: #4b5563;
+    --border: #e5e7eb;
+
+    --brand: #4f46e5;
+    --brand-alt: #6366f1;
+    --brand-ghost: rgba(79, 70, 229, 0.08);
+
+    /* відступи */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+
+    /* fluid-типографіка */
+    --fs-body: clamp(1rem, 0.94rem + 0.3vw, 1.125rem);
+    --fs-title-sm: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+    --fs-title-lg: clamp(1.5rem, 1.2rem + 1.6vw, 2.25rem);
+
+    --radius-md: 0.75rem;
+    --radius-lg: 1.25rem;
+    --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.1);
+}
+
+/* темна тема – поважаємо налаштування системи */
+@media (prefers-color-scheme: dark) {
+:root {
+        --bg: #020617;
+        --surface: #030712;
+        --surface-muted: #020617;
+        --text: #e5e7eb;
+        --text-muted: #9ca3af;
+        --border: #1f2937;
+
+        --brand: #6366f1;
+        --brand-alt: #818cf8;
+        --brand-ghost: rgba(99, 102, 241, 0.15);
+    }
+}

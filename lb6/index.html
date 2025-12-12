@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<div class="layout">
+    <header class="header">
+        <div class="header__inner">
+            <div class="logo">
+                <span class="logo__mark">WEB</span>
+                <span class="logo__text">Лабораторна №6</span>
+            </div>
+            <nav class="top-nav">
+                <a href="#" class="top-nav__link">Головна</a>
+                <a href="#" class="top-nav__link">Новини</a>
+                <a href="#" class="top-nav__link">Про курс</a>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidenav">
+        <div class="sidenav__inner">
+            <h2 class="sidenav__title">Навігація</h2>
+            <ul class="sidenav__list">
+                <li><a href="#" class="sidenav__link">Лабораторна 1</a></li>
+                <li><a href="#" class="sidenav__link">Лабораторна 2</a></li>
+                <li><a href="#" class="sidenav__link">Лабораторна 3</a></li>
+                <li><a href="#" class="sidenav__link">Лабораторна 4</a></li>
+                <li><a href="#" class="sidenav__link sidenav__link--active">Лабораторна 5</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <main class="main">
+        <section class="section">
+            <header class="section__header">
+                <h1 class="page-title">Останні оголошення</h1>
+                <p class="section__lead">
+                    Адаптивний макет, темна тема, fluid-типографіка та оптимізовані зображення.
+                </p>
+            </header>
+
+            <div class="news-list">
+                <!-- Картка 1 -->
+                <article class="news-card">
+                    <figure class="media news-card__media">
+                        <picture>
+                            <source srcset="img/placeholder-1.avif" type="image/avif" />
+                            <source srcset="img/placeholder-1.webp" type="image/webp" />
+                            <img
+                                    class="media__img"
+                                    src="/img/placeholder-1.png"
+                                    alt="Зображення до новини 1"
+                                    loading="lazy"
+                            />
+                        </picture>
+                    </figure>
+                    <div class="news-card__body">
+                        <h2 class="news-card__title">Вступ до React</h2>
+                        <p class="news-card__excerpt">
+                            Ознайомлення з компонентами, станом та життєвим циклом у сучасних SPA.
+                        </p>
+                        <div class="news-card__meta">
+                            <span class="news-card__date">10 березня 2025</span>
+                            <span class="news-card__tag">Лекція</span>
+                        </div>
+                        <button class="btn">Читати далі</button>
+                    </div>
+                </article>
+
+                <!-- Картка 2 -->
+                <article class="news-card">
+                    <figure class="media news-card__media">
+                        <picture>
+                            <source srcset="img/placeholder-2.avif" type="image/avif" />
+                            <source srcset="img/placeholder-2.webp" type="image/webp" />
+                            <img
+                                    class="media__img"
+                                    src="/img/placeholder-2.png"
+                                    alt="Зображення до новини 2"
+                                    loading="lazy"
+                            />
+                        </picture>
+                    </figure>
+                    <div class="news-card__body">
+                        <h2 class="news-card__title">CSS Grid та Flexbox</h2>
+                        <p class="news-card__excerpt">
+                            Побудова сучасних адаптивних інтерфейсів з використанням CSS-сіток.
+                        </p>
+                        <div class="news-card__meta">
+                            <span class="news-card__date">17 березня 2025</span>
+                            <span class="news-card__tag">Практика</span>
+                        </div>
+                        <button class="btn">Читати далі</button>
+                    </div>
+                </article>
+
+                <!-- Картка 3 -->
+                <article class="news-card">
+                    <figure class="media news-card__media">
+                        <picture>
+                            <source srcset="img/placeholder-3.avif" type="image/avif" />
+                            <source srcset="img/placeholder-3.webp" type="image/webp" />
+                            <img
+                                    class="media__img"
+                                    src="/img/placeholder-3.png"
+                                    alt="Зображення до новини 3"
+                                    loading="lazy"
+                            />
+                        </picture>
+                    </figure>
+                    <div class="news-card__body">
+                        <h2 class="news-card__title">Оптимізація медіа</h2>
+                        <p class="news-card__excerpt">
+                            Формати AVIF та WebP, атрибут loading, елемент &lt;picture&gt; та адаптивні зображення.
+                        </p>
+                        <div class="news-card__meta">
+                            <span class="news-card__date">24 березня 2025</span>
+                            <span class="news-card__tag">Лабораторна</span>
+                        </div>
+                        <button class="btn">Читати далі</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__text">
+                <p>&copy; 2025 Група ОПС_ТУТ_ВАША_ГРУПА</p>
+                <p>Лабораторна робота №6. Адаптивність та графіка.</p>
+            </div>
+
+            <div class="footer__contacts">
+                <h2 class="footer__title">Наші контакти</h2>
+                <ul class="footer__list">
+                    <li>
+                        Email: <a href="mailto:you@example.com">you@example.com</a>
+                    </li>
+                    <li>Телефон: +38 (050) 111-22-33</li>
+                    <li>Адреса: м. Запоріжжя, пр. Університетський, 666</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* FOOTER               */
+/* -------------------- */
+
+.footer {
+    grid-area: footer;
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: var(--space-4);
+}
+
+.footer__inner {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+
+/* 640px+: дві колонки, друга з мінімальною шириною */
+@media (min-width: 640px) {
+.footer__inner {
+        grid-template-columns: 1fr minmax(220px, 1fr);
+    }
+}
+
+/* 1024px+: контакти ширші */
+@media (min-width: 1024px) {
+.footer__inner {
+        grid-template-columns: 1fr minmax(280px, 1fr);
+    }
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    order: 2; /* на мобілах під контактами */
+}
+
+.footer__text p {
+    margin: 0 0 var(--space-1);
+}
+
+.footer__text p:last-child {
+    margin-bottom: 0;
+}
+
+.footer__contacts {
+    /* без background – щоб не було артефакта з попередньої ЛР */
+}
+
+.footer__title {
+    margin: 0 0 var(-
+    -space-2);
+    font-size: var(--fs-title-sm);
+}
+
+.footer__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.footer__list li + li {
+    margin-top: var(--space-1);
+}
+
+/* на екранах ширше 640px – текст знову перший */
+@media (min-width: 640px) {
+.footer__text {
+        order: 0;
+    }
+}
